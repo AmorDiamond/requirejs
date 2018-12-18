@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="./css/jquery.mCustomScrollbar.min.css">
+  <style>
+    .container{
+    }
+    .scroll-con{
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+    }
+    .content{
+      height: 500px;
+      background: red;
+    }
+    .time-item{
+      width: 100px;
+      height: 50px;
+      background: green;
+      margin: 20px;
+      float: left;
+    }
+    .static-time{
+      margin-right: 200px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="scroll-con">
+    <div class="content">
+      <p>dddd</p>
+    </div>
+  </div>
+  <div class="time-item time"></div>
+  <div class="time-item time-range"></div>
+  <div class="time-item set-date-range"></div>
+  <div class="time-item set-time-range"></div>
+  <div class="time-item custom-info"></div>
+  <div class="time-item static-time"></div>
+</div>
+<script src="./lib/require.min.js"></script>
+<script src="./lib/main.js"></script>
+<script src="./js/index.js"></script>
+<!--<script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+<script src="lib/jquery.mCustomScrollbar.concat.new.min.js"></script>
+<script>
+  $('.scroll-con').mCustomScrollbar({})
+</script>-->
+</body>
+</html>

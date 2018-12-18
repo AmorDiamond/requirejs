@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="./css/jquery.mCustomScrollbar.min.css">
+  <style>
+    .time-item{
+      width: 100px;
+      height: 50px;
+      background: gold;
+      float: left;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="time-item time"></div>
+  <div class="time-item time-range"></div>
+  <div class="time-item set-date-range"></div>
+  <div class="time-item set-time-range"></div>
+  <div class="time-item static-time"></div>
+</div>
+<script src="./lib/require.min.js"></script>
+<script src="./lib/main.js"></script>
+<!--<script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+<script src="lib/jquery.mCustomScrollbar.concat.new.min.js"></script>
+<script>
+  $('.scroll-con').mCustomScrollbar({})
+</script>-->
+<script>
+  require(['layer', 'laydate'], function (layer, laydate) {
+    /*在sea.js和require.js里加载layer，需要配置layer.config来让layer去加载一些它所需要的配件，比如css等*/
+    /*当然，你即便不用seajs或者requirejs，也可以通过上述方式设定路径http://layer.layui.com/api.html#layer.config*/
+    layer.config({
+      path: './lib/layer.3.1.1/'
+    })
+    layer.confirm('您是如何看待前端开发？', {
+      btn: ['重要','奇葩'] //按钮
+    }, function(){
+      layer.msg('的确很重要', {icon: 1});
+    }, function(){
+      layer.msg('也可以这样', {
+        time: 20000, //20s后自动关闭
+        btn: ['明白了', '知道了']
+      });
+    });
+    console.log(laydate)
+    laydate.render({
+      elem: '.time' //指定元素
+    });
+    //日期范围
+    laydate.render({
+      elem: '.time-range'
+      ,range: true
+    });
+    //直接嵌套显示
+    laydate.render({
+      elem: '.static-time'
+      ,position: 'static'
+    });
+    //前后若干天可选，这里以7天为例
+    laydate.render({
+      elem: '.set-date-range'
+      ,min: -7
+      ,max: 7
+    });
+
+//时间范围
+    laydate.render({
+      elem: '.set-time-range'
+      ,type: 'time'
+      ,range: true
+    });
+  })
+</script>
+</body>
+</html>
